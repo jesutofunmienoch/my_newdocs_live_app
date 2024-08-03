@@ -19,7 +19,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    
+    <ClerkProvider
+      appearance={{
+        baseTheme: dark,
+        variables: { 
+          colorPrimary: "#3371FF" ,
+          fontSize: '16px'
+        },
+      }}
+    >
       <html lang="en" suppressHydrationWarning>
         <body
           className={cn(
@@ -30,5 +38,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
         </body>
       </html>
+    </ClerkProvider>
+      
   )
 }
